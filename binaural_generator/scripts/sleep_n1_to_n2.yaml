@@ -1,0 +1,32 @@
+# Binaural Beat Script for Sleep Induction (N1 to N2)
+# Aims to guide the brain from Stage 1 NREM sleep (N1) to Stage 2 NREM sleep (N2).
+
+# Global settings
+title: Sleep (N1 to N2)
+base_frequency: 90 # Hz (Lower carrier for softer feel)
+sample_rate: 44100 # Hz
+output_filename: "audio/sleep_n1_to_n2.flac"
+
+# Sequence (Total Duration: 12 minutes)
+steps:
+  # 1. Start at low Theta (N1 sleep baseline) (180 seconds)
+  - type: stable
+    frequency: 5 # Hz (Low Theta - N1 sleep)
+    duration: 180 # seconds
+
+  # 2. Transition to deeper Theta (approaching N2) (240 seconds)
+  - type: transition
+    # start_frequency: 5 (implied)
+    end_frequency: 4 # Hz (Deeper Theta - N2 onset)
+    duration: 240 # seconds
+
+  # 3. Hold deeper Theta for N2 sleep induction (300 seconds)
+  - type: stable
+    frequency: 4 # Hz (Deeper Theta - Stage 2 NREM sleep)
+    duration: 300 # seconds
+
+  # 4. Slight dip towards Delta edge for deeper N2 (120 seconds)
+  - type: transition
+    # start_frequency: 4 (implied)
+    end_frequency: 3.5 # Hz (Theta/Delta boundary - deep N2)
+    duration: 120 # seconds

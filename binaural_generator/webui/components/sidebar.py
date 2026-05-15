@@ -106,12 +106,9 @@ def _render_brainwave_info():
 
 def _render_repo_info():
     """Render the repository information in the sidebar."""
-    st.markdown("## Repository Information")
-    st.markdown(
-        f"Binaural Beat Generator project is licensed under the {LICENSE}. "
-        f"Find the source code and contribute on [GitHub]({GITHUB_URL})."
-    )
-    st.markdown(f"Copyright © 2025 [{AUTHOR_NAME}](mailto:{AUTHOR_EMAIL}) ")
+    st.markdown("#")
+
+    st.markdown(f"Copyright © 2026 BaoYue Technologies, Inc. ")
 
 
 def render_sidebar(config: dict[str, Any], noise_types: list[str]) -> None:

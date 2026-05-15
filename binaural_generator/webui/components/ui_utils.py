@@ -18,7 +18,7 @@ def initialize_session_state() -> dict[str, Any]:
     """Initialize Streamlit session state variables if they don't exist."""
     if "config" not in st.session_state:
         st.session_state.config = {
-            "title": "Binaural Beat Generator",
+            "title": "豹跃AI音频生成器",
             "base_frequency": DEFAULT_BASE_FREQUENCY,
             "sample_rate": DEFAULT_SAMPLE_RATE,
             "output_filename": "audio/my_session.flac",

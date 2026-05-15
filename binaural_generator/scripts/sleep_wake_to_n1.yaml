@@ -1,0 +1,37 @@
+# Binaural Beat Script for Sleep Induction (Wake to N1)
+# Aims to guide the brain from wakefulness to Stage 1 NREM sleep (N1).
+
+# Global settings
+title: Sleep (Wake to N1)
+base_frequency: 95 # Hz (Slightly lower carrier for softer feel)
+sample_rate: 44100 # Hz
+output_filename: "audio/sleep_wake_to_n1.flac"
+
+# Sequence (Total Duration: 15 minutes)
+steps:
+  # 1. Start at low Beta (wakeful baseline) (120 seconds)
+  - type: stable
+    frequency: 14 # Hz (Low Beta - wakeful alertness)
+    duration: 120 # seconds
+
+  # 2. Transition down to Alpha (relaxation) (180 seconds)
+  - type: transition
+    # start_frequency: 14 (implied)
+    end_frequency: 10 # Hz (Mid Alpha - relaxed wakefulness)
+    duration: 180 # seconds
+
+  # 3. Hold Alpha for deepening relaxation (180 seconds)
+  - type: stable
+    frequency: 10 # Hz (Mid Alpha)
+    duration: 180 # seconds
+
+  # 4. Transition to low Theta (approaching N1 sleep) (240 seconds)
+  - type: transition
+    # start_frequency: 10 (implied)
+    end_frequency: 5 # Hz (Low Theta - N1 sleep onset)
+    duration: 240 # seconds
+
+  # 5. Hold low Theta for N1 sleep induction (180 seconds)
+  - type: stable
+    frequency: 5 # Hz (Low Theta - Stage 1 NREM sleep)
+    duration: 180 # seconds
